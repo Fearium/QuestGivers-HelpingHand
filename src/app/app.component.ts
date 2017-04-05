@@ -1,7 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
+import { CreatePage } from '../pages/create/create';
+import { JournalPage } from '../pages/journal/journal';
+import { RollPage } from '../pages/roll/roll';
+import { SelectPage } from '../pages/select/select';
+import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 export interface PageInterface {
@@ -19,11 +23,11 @@ export class MyApp {
 
   // set our app's pages
   appPages: PageInterface[] = [
-    { title: 'Home', component: TabsPage, icon: 'home' },
-    { title: 'Create', component: TabsPage, index: 2, icon: 'create' },
-    { title: 'View', component: TabsPage, index: 3, icon: 'list-box' },
-    { title: 'Journal', component: TabsPage, index: 4, icon: 'book' },
-    { title: 'Roll Dice', component: TabsPage, index: 5, icon: 'cube' }
+    { title: 'Home', component: HomePage, index:1, icon: 'home' },
+    { title: 'Create', component: CreatePage, index: 2, icon: 'create' },
+    { title: 'View', component: SelectPage, index: 3, icon: 'list-box' },
+    { title: 'Journal', component: JournalPage, index: 4, icon: 'book' },
+    { title: 'Roll Dice', component: RollPage, index: 5, icon: 'cube' }
   ];
 
   rootPage = TabsPage;
