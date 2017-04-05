@@ -23,7 +23,7 @@ export class MyApp {
 
   // set our app's pages
   appPages: PageInterface[] = [
-    { title: 'Home', component: HomePage, index:1, icon: 'home' },
+    { title: 'Home', component: HomePage, icon: 'home' },
     { title: 'Create', component: CreatePage, index: 2, icon: 'create' },
     { title: 'View', component: SelectPage, index: 3, icon: 'list-box' },
     { title: 'Journal', component: JournalPage, index: 4, icon: 'book' },
