@@ -3,25 +3,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
+    <ion-title text-center>
       Helping Hand
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-buttons end>
-  <button ion-button icon-only (click)="navToCreate()">
+<ion-content padding-top>
+  <ion-buttons>
+  <button ion-button icon-right full (click)="navToCreate()">
     Create Character
     <ion-icon name="add"></ion-icon>
   </button>
-  
-</ion-buttons>
-<ion-buttons end>
-  <button ion-button icon-only (click)="navToSelect()">
+  <button ion-button icon-right full (click)="navToSelect()">
     View/Edit Character
+    <ion-icon name="list-box"></ion-icon>
   </button>
-  
+  <button ion-button icon-right full (click)="navToJournalSelect()">
+    Journal
+    <ion-icon name="book"></ion-icon>
+  </button>
+  <button ion-button icon-right full (click)="navToRoll()">
+    Roll Dice
+    <ion-icon name="cube"></ion-icon>
+  </button>
 </ion-buttons>
 
 </ion-content>
