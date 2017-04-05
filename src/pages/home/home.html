@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Helping Hand
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-buttons end>
+  <button ion-button icon-only (click)="createCharacter()">
+    Create Character
+    <ion-icon name="add"></ion-icon>
+  </button>
+  
+</ion-buttons>
+<ion-buttons end>
+  <button ion-button icon-only (click)="navToSelect()">
+    View/Edit Character
+  </button>
+  
+</ion-buttons>
+
+</ion-content>
