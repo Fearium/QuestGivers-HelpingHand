@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Journal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+  <ion-item>
+    <ion-label fixed>Write:</ion-label>
+    <ion-input type="text" placeholder="Write some notes here..." [(ngModel)]="journalText"></ion-input>
+  </ion-item>
+  
+</ion-list>
+<button ion-button color="secondary" (click)="writeJournal()">Save</button>
+</ion-content>

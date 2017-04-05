@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Create
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" placeholder="name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+    <ion-item>
+    <ion-label fixed>HP</ion-label>
+    <ion-input type="number" placeholder="3" [(ngModel)]="health"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Race</ion-label>
+    <ion-select [(ngModel)]="race">
+      <ion-option value="Human" selected="true">Human</ion-option>
+      <ion-option value="Orc">Orc</ion-option>
+      <ion-option value="Elf">Elf</ion-option>
+    </ion-select>
+  </ion-item>
+  
+</ion-list>
+<button ion-button color="secondary" (click)="addCharacter()">Create</button>
+</ion-content>

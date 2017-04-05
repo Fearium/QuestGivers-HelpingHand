@@ -4,9 +4,9 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'select.html'
 })
-export class AboutPage {
+export class SelectPage {
 
   characters: FirebaseListObservable<any>;
 

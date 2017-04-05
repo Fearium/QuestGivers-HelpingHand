@@ -1,26 +1,29 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
-import { SelectPage } from '../select/select';
-import { CreatePage } from '../create/create';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-contact',
+  templateUrl: 'create.html'
 })
-export class HomePage {
+export class CreatePage {
+
+  name: string;
+  health: number;
+  race: string;
 
   characters: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, 
   af: AngularFire, public actionSheetCtrl: ActionSheetController) {
   this.characters = af.database.list('/characters');
 }
-navToSelect(){
-this.navCtrl.push(SelectPage);
-}
-navToCreate(){
-this.navCtrl.push(CreatePage, {database: this.characters});
+addCharacter(){
+  this.characters.push({
+    name: this.name,
+    health: this.health,
+    race: this.race
+  })
 }
 
 createCharacter(){
@@ -52,4 +55,5 @@ createCharacter(){
   });
   prompt.present();
   }
+
 }

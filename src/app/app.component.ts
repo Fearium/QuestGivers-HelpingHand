@@ -19,9 +19,11 @@ export class MyApp {
 
   // set our app's pages
   appPages: PageInterface[] = [
-    { title: 'Home', component: TabsPage, icon: 'calendar' },
-    { title: 'About', component: TabsPage, index: 1, icon: 'information-circle' },
-    { title: 'Contact', component: TabsPage, index: 2, icon: 'contacts' }
+    { title: 'Home', component: TabsPage, icon: 'home' },
+    { title: 'Create', component: TabsPage, index: 2, icon: 'create' },
+    { title: 'View', component: TabsPage, index: 3, icon: 'list-box' },
+    { title: 'Journal', component: TabsPage, index: 4, icon: 'book' },
+    { title: 'Roll Dice', component: TabsPage, index: 5, icon: 'cube' }
   ];
 
   rootPage = TabsPage;

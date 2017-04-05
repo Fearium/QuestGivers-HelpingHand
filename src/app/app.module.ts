@@ -1,8 +1,10 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { SelectPage } from '../pages/select/select';
+import { CreatePage } from '../pages/create/create';
+import { JournalPage } from '../pages/journal/journal';
+import { RollPage } from '../pages/roll/roll';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 // Import the AF2 Module
@@ -21,8 +23,10 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SelectPage,
+    CreatePage,
+    RollPage,
+    JournalPage,
     HomePage,
     TabsPage
   ],
@@ -33,8 +37,10 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SelectPage,
+    CreatePage,
+    RollPage,
+    JournalPage,
     HomePage,
     TabsPage
   ],
