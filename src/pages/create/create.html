@@ -4,31 +4,413 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Create
+      Character Creation
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-<ion-list>
 
-  <ion-item>
-    <ion-label fixed>Name</ion-label>
-    <ion-input type="text" placeholder="name" [(ngModel)]="name"></ion-input>
-  </ion-item>
-    <ion-item>
-    <ion-label fixed>HP</ion-label>
-    <ion-input type="number" placeholder="3" [(ngModel)]="health"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Race</ion-label>
-    <ion-select [(ngModel)]="race">
-      <ion-option value="Human" selected="true">Human</ion-option>
-      <ion-option value="Orc">Orc</ion-option>
-      <ion-option value="Elf">Elf</ion-option>
-    </ion-select>
-  </ion-item>
-  
-</ion-list>
-<button ion-button color="secondary" (click)="addCharacter()">Create</button>
+  <ion-grid>
+
+    <h3 text-center>Basic Information</h3>
+
+    <ion-list>
+      
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label stacked>Character Name</ion-label>
+            <ion-input type="text" placeholder="Trigonas" [(ngModel)]="name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <!-- Would like to allow for custom classes in a future version update-->
+            <ion-label stacked>Class</ion-label>
+            <ion-select placeholder="Choose..." [(ngModel)]="class">
+             <ion-option value="Barbarian" selected="true">Barbarian</ion-option>
+             <ion-option value="Bard">Bard</ion-option>
+             <ion-option value="Cleric">Cleric</ion-option>
+             <ion-option value="Druid">Druid</ion-option>
+             <ion-option value="Fighter">Fighter</ion-option>
+             <ion-option value="Magic-User/Mage/Wizard">Magic-User/Mage/Wizard</ion-option>
+             <ion-option value="Monk/Mystic">Monk/Mystic</ion-option>
+             <ion-option value="Paladin">Paladin</ion-option>
+             <ion-option value="Ranger">Ranger</ion-option>
+             <ion-option value="Sorcerer">Sorcerer</ion-option>
+             <ion-option value="Thief/Rogue">Thief/Rogue</ion-option>
+             <ion-option value="Warlock">Warlock</ion-option>
+            </ion-select>
+           </ion-item>
+       </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+          <ion-item>
+          <!-- Would like to allow for custom races in a future version update-->
+           <ion-label stacked>Race</ion-label>
+             <ion-select placeholder="Choose..." [(ngModel)]="race">
+              <ion-option value="Dragonborn" selected="true">Dragonborn</ion-option>
+              <ion-option value="Dwarf">Dwarf</ion-option>
+              <ion-option value="Eladrin">Eladrin</ion-option>
+              <ion-option value="Elf">Elf</ion-option>
+              <ion-option value="Gnome">Gnome</ion-option>
+              <ion-option value="alf-elf">Half-elf</ion-option>
+              <ion-option value="Half-orc">Half-orc</ion-option>
+              <ion-option value="Halfling">Halfling</ion-option>
+              <ion-option value="Human">Human</ion-option>
+              <ion-option value="Tiefling">Tiefling</ion-option>
+             </ion-select>
+         </ion-item>
+        </ion-col>
+        <ion-col col-6>
+         <ion-item>
+           <ion-label stacked>Alignment</ion-label>
+             <ion-select placeholder="Choose..." [(ngModel)]="alignment">
+              <ion-option value="Human" selected="true">Lawful good</ion-option>
+              <ion-option value="Orc">Lawful neutral</ion-option>
+              <ion-option value="Elf">Lawful evil</ion-option>
+              <ion-option value="Elf">Neutral good</ion-option>
+              <ion-option value="Elf">Neutral (true)</ion-option>
+              <ion-option value="Elf">Neutral evil</ion-option>
+              <ion-option value="Elf">Chaotic good</ion-option>
+              <ion-option value="Elf">Chaotic neutral</ion-option>
+              <ion-option value="Elf">Chaotic evil</ion-option>
+             </ion-select>
+         </ion-item>
+       </ion-col>
+    </ion-row>
+
+  </ion-list>
+
+<h3 text-center>Base Stats</h3>
+
+    <ion-list>
+
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Hit Points</ion-label>
+            <ion-input type="number" placeholder="15" [(ngModel)]="hitPoints"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Armour Class</ion-label>
+            <ion-input type="number" placeholder="10" [(ngModel)]="armourClass"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Speed (ft.)</ion-label>
+            <ion-input type="number" placeholder="30" [(ngModel)]="speed"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+
+  </ion-list>
+
+<h3 text-center>Ability Scores and Modifiers</h3>
+
+    <ion-list>
+
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>STR</ion-label>
+            <ion-input type="number" placeholder="7" [(ngModel)]="STR"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="-2" [(ngModel)]="STRMod"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>DEX</ion-label>
+            <ion-input type="number" placeholder="15" [(ngModel)]="DEX"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="+2" [(ngModel)]="DEXMod"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>CON</ion-label>
+            <ion-input type="number" placeholder="9" [(ngModel)]="CON"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="-1" [(ngModel)]="CONMod"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>INT</ion-label>
+            <ion-input type="number" placeholder="8" [(ngModel)]="INT"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="-1" [(ngModel)]="INTMod"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>WIS</ion-label>
+            <ion-input type="number" placeholder="7" [(ngModel)]="WIS"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="-2" [(ngModel)]="WISMod"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>CHA</ion-label>
+            <ion-input type="number" placeholder="8" [(ngModel)]="CHA"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-2>
+          <ion-item>
+            <ion-label stacked>Modifier</ion-label>
+            <ion-input type="string" placeholder="-1" [(ngModel)]="CHAMod"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+
+  </ion-list>
+
+<h3 text-center>Skills</h3>
+
+    <ion-list>
+
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Athletics</ion-label>
+            <ion-input type="number" placeholder="9" [(ngModel)]="athletics"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Acrobatics</ion-label>
+            <ion-input type="number" placeholder="5" [(ngModel)]="acrobatics"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Sleight of Hand</ion-label>
+            <ion-input type="number" placeholder="4" [(ngModel)]="sleightOfHand"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Stealth</ion-label>
+            <ion-input type="number" placeholder="7" [(ngModel)]="stealth"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Arcana</ion-label>
+            <ion-input type="number" placeholder="1" [(ngModel)]="arcana"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>History</ion-label>
+            <ion-input type="number" placeholder="2" [(ngModel)]="history"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Investigation</ion-label>
+            <ion-input type="number" placeholder="8" [(ngModel)]="investigation"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Nature</ion-label>
+            <ion-input type="number" placeholder="4" [(ngModel)]="nature"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Religion</ion-label>
+            <ion-input type="number" placeholder="2" [(ngModel)]="religion"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+        <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Animal Handling</ion-label>
+            <ion-input type="number" placeholder="6" [(ngModel)]="animalHandling"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Insight</ion-label>
+            <ion-input type="number" placeholder="1" [(ngModel)]="insight"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Medicine</ion-label>
+            <ion-input type="number" placeholder="3" [(ngModel)]="medicine"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+        <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Perception</ion-label>
+            <ion-input type="number" placeholder="4" [(ngModel)]="perception"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Survival</ion-label>
+            <ion-input type="number" placeholder="9" [(ngModel)]="survival"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Deception</ion-label>
+            <ion-input type="number" placeholder="7" [(ngModel)]="deception"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+        <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Intimidation</ion-label>
+            <ion-input type="number" placeholder="2" [(ngModel)]="intimidation"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Performance</ion-label>
+            <ion-input type="number" placeholder="5" [(ngModel)]="performance"></ion-input>
+          </ion-item>
+       </ion-col>
+       <ion-col col-4>
+          <ion-item>
+            <ion-label stacked>Persuasion</ion-label>
+            <ion-input type="number" placeholder="3" [(ngModel)]="persuasion"></ion-input>
+          </ion-item>
+       </ion-col>
+    </ion-row>
+
+  </ion-list>
+
+  <h3 text-center>Abilities</h3>
+
+    <ion-list>
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label stacked>Senses</ion-label>
+            <ion-input type="string" placeholder="Dark-vision 60ft: Can see further through darkness; Deaf: Can not hear sounds through conventional means;..." [(ngModel)]="senses"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label stacked>Languages</ion-label>
+            <ion-input type="string" placeholder="Common, Elven, Orcish..." [(ngModel)]="languages"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <!-- Would like to have a full text box/area in a future update -->
+          <ion-item>
+            <ion-label stacked>Passives</ion-label>
+            <ion-input type="string" placeholder="Damned Soul: No longer receives buffs from party members due to a curse placed upon you many moons ago..." [(ngModel)]="passives"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+
+  </ion-list>
+
+<h3 text-center>Gear</h3>
+
+    <ion-list>
+
+      <ion-row>
+        <ion-col col-12>
+          <!-- Would like to have a full text box/area in a future update -->
+          <ion-item>
+            <ion-label stacked>Weapons</ion-label>
+            <ion-input type="string" placeholder="DAGGER: Melee Weapon Attack, +4 to hit, reach 5 ft, one target, (1d4 + 2) piercing damage; BOW: Ranged Weapon Attack, +4 to hit, reach 50 ft, one target, (1d4 + 1) piercing damage;" [(ngModel)]="weapons"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <!-- Would like to have a full text box/area in a future update -->
+          <ion-item>
+            <ion-label stacked>Equipment</ion-label>
+            <ion-input type="string" placeholder="Leather armour; Lucky Coin; Magical Lock Box;" [(ngModel)]="equipment"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+
+  </ion-list>
+
+<h3 text-center>Journal (will be hidden) but FILL IN FOR NOW</h3>
+      <ion-list>
+
+      <ion-row>
+        <ion-col col-12>
+          <!-- THIS WILL BE HIDDEN AND HOLD A DEFAULT VALUE-->
+          <ion-item>
+            <ion-label stacked>Journal</ion-label>
+            <ion-input type="string" placeholder="HIDE ME PLEASE" [(ngModel)]="journal"></ion-input>
+          </ion-item>
+        </ion-col>
+     </ion-row>
+
+  </ion-list>
+
+  <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end color="secondary" (click)="addCharacter()">Save!</button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+
+</ion-grid>
+
+
 </ion-content>
