@@ -68,15 +68,15 @@
          <ion-item>
            <ion-label stacked>Alignment</ion-label>
              <ion-select placeholder="Choose..." [(ngModel)]="alignment">
-              <ion-option value="Human" selected="true">Lawful good</ion-option>
-              <ion-option value="Orc">Lawful neutral</ion-option>
-              <ion-option value="Elf">Lawful evil</ion-option>
-              <ion-option value="Elf">Neutral good</ion-option>
-              <ion-option value="Elf">Neutral (true)</ion-option>
-              <ion-option value="Elf">Neutral evil</ion-option>
-              <ion-option value="Elf">Chaotic good</ion-option>
-              <ion-option value="Elf">Chaotic neutral</ion-option>
-              <ion-option value="Elf">Chaotic evil</ion-option>
+              <ion-option value="Lawful good" selected="true">Lawful good</ion-option>
+              <ion-option value="Lawful neutral">Lawful neutral</ion-option>
+              <ion-option value="Lawful evil">Lawful evil</ion-option>
+              <ion-option value="Neutral good">Neutral good</ion-option>
+              <ion-option value="Neutral (true)">Neutral (true)</ion-option>
+              <ion-option value="Neutral evil">Neutral evil</ion-option>
+              <ion-option value="Chaotic good">Chaotic good</ion-option>
+              <ion-option value="Chaotic neutral">Chaotic neutral</ion-option>
+              <ion-option value="Chaotic evil">Chaotic evil</ion-option>
              </ion-select>
          </ion-item>
        </ion-col>
@@ -116,25 +116,27 @@
     <ion-list>
 
       <ion-row>
-        <ion-col col-4>
+        <ion-col col-8>
           <ion-item>
             <ion-label stacked>STR</ion-label>
             <ion-input type="number" placeholder="7" [(ngModel)]="STR"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="-2" [(ngModel)]="STRMod"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+      </ion-row>
+      <ion-row>
+       <ion-col col-8>
           <ion-item>
             <ion-label stacked>DEX</ion-label>
             <ion-input type="number" placeholder="15" [(ngModel)]="DEX"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-2>
+       <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="+2" [(ngModel)]="DEXMod"></ion-input>
@@ -142,25 +144,27 @@
        </ion-col>
     </ion-row>
       <ion-row>
-        <ion-col col-4>
+        <ion-col col-8>
           <ion-item>
             <ion-label stacked>CON</ion-label>
             <ion-input type="number" placeholder="9" [(ngModel)]="CON"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="-1" [(ngModel)]="CONMod"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+      </ion-row>
+      <ion-row>
+       <ion-col col-8>
           <ion-item>
             <ion-label stacked>INT</ion-label>
             <ion-input type="number" placeholder="8" [(ngModel)]="INT"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-2>
+       <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="-1" [(ngModel)]="INTMod"></ion-input>
@@ -168,25 +172,27 @@
        </ion-col>
     </ion-row>
       <ion-row>
-        <ion-col col-4>
+        <ion-col col-8>
           <ion-item>
             <ion-label stacked>WIS</ion-label>
             <ion-input type="number" placeholder="7" [(ngModel)]="WIS"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="-2" [(ngModel)]="WISMod"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+      </ion-row>
+      <ion-row>
+       <ion-col col-8>
           <ion-item>
             <ion-label stacked>CHA</ion-label>
             <ion-input type="number" placeholder="8" [(ngModel)]="CHA"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-2>
+       <ion-col col-4>
           <ion-item>
             <ion-label stacked>Modifier</ion-label>
             <ion-input type="string" placeholder="-1" [(ngModel)]="CHAMod"></ion-input>
@@ -201,79 +207,83 @@
     <ion-list>
 
       <ion-row>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Athletics</ion-label>
             <ion-input type="number" placeholder="9" [(ngModel)]="athletics"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Acrobatics</ion-label>
             <ion-input type="number" placeholder="5" [(ngModel)]="acrobatics"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+    </ion-row>
+    <ion-row>       
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>Sleight of Hand</ion-label>
             <ion-input type="number" placeholder="4" [(ngModel)]="sleightOfHand"></ion-input>
           </ion-item>
        </ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Stealth</ion-label>
             <ion-input type="number" placeholder="7" [(ngModel)]="stealth"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+    </ion-row>
+        <ion-row>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Arcana</ion-label>
             <ion-input type="number" placeholder="1" [(ngModel)]="arcana"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>History</ion-label>
             <ion-input type="number" placeholder="2" [(ngModel)]="history"></ion-input>
           </ion-item>
        </ion-col>
     </ion-row>
-    <ion-row>
-        <ion-col col-4>
+      <ion-row>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Investigation</ion-label>
             <ion-input type="number" placeholder="8" [(ngModel)]="investigation"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Nature</ion-label>
             <ion-input type="number" placeholder="4" [(ngModel)]="nature"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+      </ion-row>
+      <ion-row>
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>Religion</ion-label>
             <ion-input type="number" placeholder="2" [(ngModel)]="religion"></ion-input>
           </ion-item>
        </ion-col>
-    </ion-row>
-        <ion-row>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Animal Handling</ion-label>
             <ion-input type="number" placeholder="6" [(ngModel)]="animalHandling"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Insight</ion-label>
             <ion-input type="number" placeholder="1" [(ngModel)]="insight"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>Medicine</ion-label>
             <ion-input type="number" placeholder="3" [(ngModel)]="medicine"></ion-input>
@@ -281,39 +291,41 @@
        </ion-col>
     </ion-row>
         <ion-row>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Perception</ion-label>
             <ion-input type="number" placeholder="4" [(ngModel)]="perception"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Survival</ion-label>
             <ion-input type="number" placeholder="9" [(ngModel)]="survival"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+        </ion-row>
+        <ion-row>
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>Deception</ion-label>
             <ion-input type="number" placeholder="7" [(ngModel)]="deception"></ion-input>
           </ion-item>
        </ion-col>
-    </ion-row>
-        <ion-row>
-        <ion-col col-4>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Intimidation</ion-label>
             <ion-input type="number" placeholder="2" [(ngModel)]="intimidation"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-4>
+        </ion-row>
+        <ion-row>
+        <ion-col col-6>
           <ion-item>
             <ion-label stacked>Performance</ion-label>
             <ion-input type="number" placeholder="5" [(ngModel)]="performance"></ion-input>
           </ion-item>
        </ion-col>
-       <ion-col col-4>
+       <ion-col col-6>
           <ion-item>
             <ion-label stacked>Persuasion</ion-label>
             <ion-input type="number" placeholder="3" [(ngModel)]="persuasion"></ion-input>
