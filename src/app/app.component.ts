@@ -6,7 +6,7 @@ import { JournalPage } from '../pages/journal/journal';
 import { RollPage } from '../pages/roll/roll';
 import { SelectPage } from '../pages/select/select';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+//import { TabsPage } from '../pages/tabs/tabs';
 
 export interface PageInterface {
   title: string;
@@ -24,13 +24,14 @@ export class MyApp {
   // set our app's pages
   appPages: PageInterface[] = [
     { title: 'Home', component: HomePage, icon: 'home' },
-    { title: 'Create', component: CreatePage, index: 2, icon: 'create' },
-    { title: 'View', component: SelectPage, index: 3, icon: 'list-box' },
+    { title: 'Create Character', component: CreatePage, index: 2, icon: 'create' },
+    { title: 'View/Edit Character', component: SelectPage, index: 3, icon: 'list-box' },
     { title: 'Journal', component: JournalPage, index: 4, icon: 'book' },
     { title: 'Roll Dice', component: RollPage, index: 5, icon: 'cube' }
   ];
 
-  rootPage = TabsPage;
+  //rootPage = TabsPage;
+  rootPage = HomePage;
 
   constructor(platform: Platform, public menu: MenuController) {
     platform.ready().then(() => {

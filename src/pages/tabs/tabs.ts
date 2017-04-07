@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
@@ -23,3 +23,4 @@ export class TabsPage {
     this.mySelectedIndex = navParams.data.tabIndex || 0;
   }
 }
+*/
