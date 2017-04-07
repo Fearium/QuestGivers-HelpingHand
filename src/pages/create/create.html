@@ -12,7 +12,7 @@
 <ion-content>
 
   <ion-grid>
-
+<div [hidden]="!showBasicInformation">
     <h3 text-center>Basic Information</h3>
 
     <ion-list>
@@ -111,6 +111,23 @@
 
   </ion-list>
 
+  <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end (click)="nextToAbilityScoresAndModifiersButton()">Next ></button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+</div>
+  <div [hidden]="!showAbilityScoresAndModifiers">
+
 <h3 text-center>Ability Scores and Modifiers</h3>
 
     <ion-list>
@@ -201,6 +218,24 @@
     </ion-row>
 
   </ion-list>
+  <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end color="light" (click)="previousToShowBasicInformationButton()">< Previous</button>
+        <button ion-button end (click)="nextToSkillsButton()">Next ></button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  </div>
+
+  <div [hidden]="!showSkills">
 
 <h3 text-center>Skills</h3>
 
@@ -334,6 +369,24 @@
     </ion-row>
 
   </ion-list>
+    <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end color="light" (click)="previousToShowAbilityScoresAndModifiersButton()">< Previous</button>
+        <button ion-button end (click)="nextToShowAbilitiesButton()">Next ></button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  </div>
+
+  <div [hidden]="!showAbilities">
 
   <h3 text-center>Abilities</h3>
 
@@ -367,6 +420,24 @@
 
   </ion-list>
 
+    <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end color="light" (click)="previousToShowSkillsButton()">< Previous</button>
+        <button ion-button end (click)="nextToShowGearButton()">Next ></button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  </div>
+  <div [hidden]="!showGear">
+
 <h3 text-center>Gear</h3>
 
     <ion-list>
@@ -392,6 +463,23 @@
 
   </ion-list>
 
+    <ion-row>
+    <ion-col col-6>
+      <!-- Needs to trigger a popup to confirm cancelation-->
+      <ion-buttons start>
+        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
+      </ion-buttons>
+    </ion-col>
+      <ion-col col-6>
+      <ion-buttons end>
+        <button ion-button end color="light" (click)="previousToShowAbilitiesButton()">< Previous</button>
+        <button ion-button end color="secondary" (click)="addCharacter()">Save!</button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  </div>
+<div [hidden]="!showJournal">
 <h3 text-center>Journal (will be hidden) but FILL IN FOR NOW</h3>
       <ion-list>
 
@@ -406,21 +494,7 @@
      </ion-row>
 
   </ion-list>
-
-  <ion-row>
-    <ion-col col-6>
-      <!-- Needs to trigger a popup to confirm cancelation-->
-      <ion-buttons start>
-        <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
-      </ion-buttons>
-    </ion-col>
-      <ion-col col-6>
-      <ion-buttons end>
-        <button ion-button end color="secondary" (click)="addCharacter()">Save!</button>
-      </ion-buttons>
-    </ion-col>
-  </ion-row>
-
+</div>
 
 </ion-grid>
 

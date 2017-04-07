@@ -55,7 +55,12 @@ export class CreatePage {
   equipment: string;
   passives: string;
   journal: string;
-
+  showAbilityScoresAndModifiers: boolean;
+  showBasicInformation = true;
+  showSkills: boolean;
+  showAbilities: boolean;
+  showGear: boolean;
+  showJournal: boolean;
   
 
   characters: FirebaseListObservable<any>;
@@ -66,6 +71,40 @@ export class CreatePage {
 }
 cancelCreation(){
   this.navCtrl.push(HomePage);
+}
+nextToAbilityScoresAndModifiersButton(){
+  this.showAbilityScoresAndModifiers = true;
+  this.showBasicInformation = false;
+}
+previousToShowBasicInformationButton(){
+  this.showAbilityScoresAndModifiers = false;
+  this.showBasicInformation = true;
+}
+
+nextToSkillsButton(){
+  this.showSkills = true;
+  this.showAbilityScoresAndModifiers = false;
+}
+
+previousToShowAbilityScoresAndModifiersButton(){
+  this.showSkills = false;
+  this.showAbilityScoresAndModifiers = true;
+}
+nextToShowAbilitiesButton(){
+  this.showAbilities = true;
+  this.showSkills = false;
+}
+previousToShowSkillsButton(){
+  this.showAbilities = false;
+  this.showSkills = true;
+}
+nextToShowGearButton(){
+  this.showGear = true;
+  this.showAbilities = false;
+}
+previousToShowAbilitiesButton(){
+  this.showGear = false;
+  this.showAbilities = true;
 }
 addCharacter(){
   this.characters.push({
