@@ -12,5 +12,33 @@
 <ion-content>
 
 <p>ROLL SOME DICE!!!!!</p>
-<button ion-button color="secondary" (click)="rollDice()">Roll!</button>
+<ion-list>
+  <ion-label>Sides</ion-label>
+  <ion-item>
+    <ion-select [(ngModel)]="sides">
+      <ion-option value=4 selected="true">4</ion-option>
+      <ion-option value=6 >6</ion-option>
+      <ion-option value=8 >8</ion-option>
+      <ion-option value=10 >10</ion-option>
+      <ion-option value=12 >12</ion-option>
+      <ion-option value=20 >20</ion-option>
+    </ion-select>
+  </ion-item>
+    <ion-item>
+    <ion-select [(ngModel)]="amount">
+      <ion-option value=1 selected="true">1</ion-option>
+      <ion-option value=2 >2</ion-option>
+      <ion-option value=3 >3</ion-option>
+      <ion-option value=4 >4</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item> <ion-label fixed>Results:</ion-label> </ion-item>
+    <!-- Loop Through Shopping Lists To Make List -->
+    <ion-item *ngFor="let r of results">
+        <ion-label>
+          {{r.result}}
+        </ion-label>
+    </ion-item>
+</ion-list>
+<button id="RollButton" ion-button color="secondary" (click)="rollDice()">Roll!</button>
 </ion-content>
