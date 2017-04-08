@@ -56,7 +56,7 @@ viewCharacter(characterId, storedCharacterId){
   storedCharacterId = characterId;
 
   this.navCtrl.push(ViewStatsPage,{
-            firstPassed: storedCharacterId
+            characterIdPassed: storedCharacterId
           });
 }
 

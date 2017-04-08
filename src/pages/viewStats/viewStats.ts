@@ -8,15 +8,18 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class ViewStatsPage {
   public firstParam:any;
-  public secondParam:any;
 
   characters: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public params: NavParams, public alertCtrl: AlertController, 
   af: AngularFire, public actionSheetCtrl: ActionSheetController) {
-      this.firstParam = params.get("firstPassed");
+      this.firstParam = params.get("characterIdPassed");
       this.characters = af.database.list('/characters');
   }
+   ionViewDidLoad(firstParam) {
+    console.log(this.firstParam);
+  }
+
   showOptions(characterId, characterName) {
   let actionSheet = this.actionSheetCtrl.create({
     title: 'What do you want to do?',
