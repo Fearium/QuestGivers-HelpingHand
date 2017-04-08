@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
-import { ViewStatsPage } from '../viewStats/viewStats';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'select.html'
+  templateUrl: 'viewStats.html'
 })
-export class SelectPage {
+export class ViewStatsPage {
+  public firstParam:any;
+  public secondParam:any;
 
-  storedCharacterId : string;
   characters: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
+  constructor(public navCtrl: NavController, public params: NavParams, public alertCtrl: AlertController, 
   af: AngularFire, public actionSheetCtrl: ActionSheetController) {
-  this.characters = af.database.list('/characters');
+      this.firstParam = params.get("firstPassed");
+      this.characters = af.database.list('/characters');
   }
-  showOptions(characterId, characterName, storedCharacterId) {
+  showOptions(characterId, characterName) {
   let actionSheet = this.actionSheetCtrl.create({
     title: 'What do you want to do?',
     buttons: [
@@ -27,15 +28,14 @@ export class SelectPage {
           this.removeCharacter(characterId);
         }
       },{
-        text: 'View Stat Block',
-        handler: () => {
-          this.viewCharacter(characterId, storedCharacterId);
-        }
-      },
-      {
         text: 'Edit Character',
         handler: () => {
           this.updateCharacter(characterId, characterName);
+        }
+      },{
+        text: 'View Stat Block',
+        handler: () => {
+          this.viewCharacter(characterId, characterName);
         }
       },{
         text: 'Cancel',
@@ -50,14 +50,6 @@ export class SelectPage {
 }
 removeCharacter(characterId: string){
   this.characters.remove(characterId);
-}
-viewCharacter(characterId, storedCharacterId){
-
-  storedCharacterId = characterId;
-
-  this.navCtrl.push(ViewStatsPage,{
-            firstPassed: storedCharacterId
-          });
 }
 
 updateCharacter(characterId, characterName){
@@ -90,5 +82,35 @@ updateCharacter(characterId, characterName){
   });
   prompt.present();
 }
+  viewCharacter(characterId, characterName){
+    let prompt = this.alertCtrl.create({
+      title: 'Character Name',
+      message: "Update the name for this Character",
+      inputs: [
+        {
+          name: 'name',
+          placeholder: 'Name',
+          value: characterName
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.characters.update(characterId, {
+              name: data.name
+            });
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
 
 }

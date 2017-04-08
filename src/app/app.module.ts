@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SelectPage } from '../pages/select/select';
+import { ViewStatsPage } from '../pages/viewStats/viewStats';
 import { CreatePage } from '../pages/create/create';
 import { JournalPage } from '../pages/journal/journal';
 import { RollPage } from '../pages/roll/roll';
@@ -24,6 +25,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     SelectPage,
+    ViewStatsPage,
     CreatePage,
     RollPage,
     JournalPage,
@@ -38,6 +40,7 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     SelectPage,
+    ViewStatsPage,
     CreatePage,
     RollPage,
     JournalPage,
