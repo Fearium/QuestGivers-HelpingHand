@@ -219,13 +219,13 @@
         </form> 
       </ion-list>
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- Needs to trigger a popup to confirm cancelation-->
           <ion-buttons start>
             <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
           </ion-buttons>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-8>
           <ion-buttons end>
             <button ion-button end color="light" (click)="previousToShowBasicInformationButton()">< Previous</button>
             <button ion-button end (click)="nextToSkillsButton()">Next ></button>
@@ -370,13 +370,13 @@
         </form>
       </ion-list>
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- Needs to trigger a popup to confirm cancelation-->
           <ion-buttons start>
             <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
           </ion-buttons>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-8>
           <ion-buttons end>
             <button ion-button end color="light" (click)="previousToShowAbilityScoresAndModifiersButton()">< Previous</button>
             <button ion-button end (click)="nextToShowAbilitiesButton()">Next ></button>
@@ -423,13 +423,13 @@
       </ion-list>
 
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- Needs to trigger a popup to confirm cancelation-->
           <ion-buttons start>
             <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
           </ion-buttons>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-8>
           <ion-buttons end>
             <button ion-button end color="light" (click)="previousToShowSkillsButton()">< Previous</button>
             <button ion-button end (click)="nextToShowGearButton()">Next ></button>
@@ -467,13 +467,13 @@
       </ion-list>
 
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-4>
           <!-- Needs to trigger a popup to confirm cancelation-->
           <ion-buttons start>
             <button ion-button end color="danger" (click)="cancelCreation()">Cancel</button>
           </ion-buttons>
         </ion-col>
-        <ion-col col-6>
+        <ion-col col-8>
           <ion-buttons end>
             <button ion-button end color="light" (click)="previousToShowAbilitiesButton()">< Previous</button>
             <button ion-button end color="secondary" (click)="addCharacter()">Save!</button>
@@ -482,16 +482,18 @@
       </ion-row>
 
     </div>
+
+                <!-- Always to remain hidden.-->
     <div [hidden]="!showJournal">
       <h3 text-center>Journal (will be hidden) but FILL IN FOR NOW</h3>
       <ion-list>
 
         <ion-row>
           <ion-col col-12>
-            <!-- THIS WILL BE HIDDEN AND HOLD A DEFAULT VALUE-->
+
             <ion-item>
               <ion-label stacked>Journal</ion-label>
-              <ion-input type="string" placeholder="HIDE ME PLEASE" [(ngModel)]="journal"></ion-input>
+              <ion-input type="string" [(ngModel)]="journal"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>

@@ -233,7 +233,8 @@ addCharacter(){
       weapons: this.weapons,
       equipment: this.equipment,
       passives: this.passives,
-      journal: this.journal
+      //just saves a journal variable with the  characters name so that it can be accessed later
+      journal: this.name
     })
     // Will eventually navigate to Stat Block view instead
     this.navCtrl.push(SelectPage/*, {database: this.characters}*/);
