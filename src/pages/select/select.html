@@ -12,7 +12,7 @@
 <ion-content padding>
 
   <ion-list>
-  <ion-item *ngFor="let character of characters | async" (click)="showOptions(character.$key, character.name)">
+  <ion-item *ngFor="let character of characters | async" (click)="showOptions(character)">
     {{character.name}}
   </ion-item>
 </ion-list>

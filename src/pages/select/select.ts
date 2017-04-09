@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { ViewStatsPage } from '../viewStats/viewStats';
+import { CreatePage } from '../create/create';
 
 @Component({
   selector: 'page-about',
@@ -15,8 +16,9 @@ export class SelectPage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
   af: AngularFire, public actionSheetCtrl: ActionSheetController) {
   this.characters = af.database.list('/characters');
-  }
-  showOptions(characterId, characterName, storedCharacterId) {
+}
+
+  showOptions(character) {
   let actionSheet = this.actionSheetCtrl.create({
     title: 'What do you want to do?',
     buttons: [
@@ -24,18 +26,20 @@ export class SelectPage {
         text: 'Delete Character',
         role: 'destructive',
         handler: () => {
-          this.removeCharacter(characterId);
+          this.removeCharacter(character.$key);
         }
       },{
         text: 'View Stat Block',
         handler: () => {
-          this.viewCharacter(characterId, storedCharacterId);
+          this.viewCharacter(character);
         }
       },
       {
         text: 'Edit Character',
         handler: () => {
-          this.updateCharacter(characterId, characterName);
+          this.navCtrl.push(CreatePage,{
+            selectedCharacter: character
+          });
         }
       },{
         text: 'Cancel',
@@ -51,12 +55,10 @@ export class SelectPage {
 removeCharacter(characterId: string){
   this.characters.remove(characterId);
 }
-viewCharacter(characterId, storedCharacterId){
-
-  storedCharacterId = characterId;
+viewCharacter(selectedCharacter){
 
   this.navCtrl.push(ViewStatsPage,{
-            characterIdPassed: storedCharacterId
+            selectedCharacter: selectedCharacter
           });
 }
 

@@ -21,7 +21,7 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Character Name</ion-label>
-              <ion-input formControlName="name" type="text" placeholder="Trigonas" [(ngModel)]="name"></ion-input>
+              <ion-input formControlName="name" type="text" placeholder="Trigonas" [value]="name" [(ngModel)]="name"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
@@ -92,19 +92,19 @@
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Hit Points</ion-label>
-                <ion-input formControlName="hp" type="number" placeholder="15" [(ngModel)]="hitPoints"></ion-input>
+                <ion-input formControlName="hp" type="number" placeholder="15" [value]="hitPoints" [(ngModel)]="hitPoints"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Armour Class</ion-label>
-                <ion-input formControlName="ac" type="number" placeholder="10" [(ngModel)]="armourClass"></ion-input>
+                <ion-input formControlName="ac" type="number" placeholder="10" [value]="armourClass" [(ngModel)]="armourClass"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Speed (ft.)</ion-label>
-                <ion-input formControlName="speed" type="number" placeholder="30" [(ngModel)]="speed"></ion-input>
+                <ion-input formControlName="speed" type="number" placeholder="30" [value]="speed" [(ngModel)]="speed"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -136,13 +136,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>STR</ion-label>
-                <ion-input formControlName="str" type="number" placeholder="7" [(ngModel)]="STR"></ion-input>
+                <ion-input formControlName="str" type="number" placeholder="7" [value]="STR" [(ngModel)]="STR"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="strmod" type="string" placeholder="-2" [(ngModel)]="STRMod"></ion-input>
+                <ion-input formControlName="strmod" type="string" placeholder="-2" [value]="STRMod" [(ngModel)]="STRMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -150,13 +150,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>DEX</ion-label>
-                <ion-input formControlName="dex" type="number" placeholder="15" [(ngModel)]="DEX"></ion-input>
+                <ion-input formControlName="dex" type="number" placeholder="15" [value]="DEX" [(ngModel)]="DEX"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="dexmod" type="string" placeholder="+2" [(ngModel)]="DEXMod"></ion-input>
+                <ion-input formControlName="dexmod" type="string" placeholder="+2" [value]="DEXMod" [(ngModel)]="DEXMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -164,13 +164,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>CON</ion-label>
-                <ion-input formControlName="con" type="number" placeholder="9" [(ngModel)]="CON"></ion-input>
+                <ion-input formControlName="con" type="number" placeholder="9" [value]="CON" [(ngModel)]="CON"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="conmod" type="string" placeholder="-1" [(ngModel)]="CONMod"></ion-input>
+                <ion-input formControlName="conmod" type="string" placeholder="-1" [value]="CONMod" [(ngModel)]="CONMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -178,13 +178,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>INT</ion-label>
-                <ion-input formControlName="int" type="number" placeholder="8" [(ngModel)]="INT"></ion-input>
+                <ion-input formControlName="int" type="number" placeholder="8" [value]="INT" [(ngModel)]="INT"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="intmod" type="string" placeholder="-1" [(ngModel)]="INTMod"></ion-input>
+                <ion-input formControlName="intmod" type="string" placeholder="-1" [value]="INTMod" [(ngModel)]="INTMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -192,13 +192,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>WIS</ion-label>
-                <ion-input formControlName="wis" type="number" placeholder="7" [(ngModel)]="WIS"></ion-input>
+                <ion-input formControlName="wis" type="number" placeholder="7" [value]="WIS" [(ngModel)]="WIS"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="wismod" type="string" placeholder="-2" [(ngModel)]="WISMod"></ion-input>
+                <ion-input formControlName="wismod" type="string" placeholder="-2" [value]="WISMod" [(ngModel)]="WISMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -206,13 +206,13 @@
             <ion-col col-8>
               <ion-item>
                 <ion-label stacked>CHA</ion-label>
-                <ion-input formControlName="cha" type="number" placeholder="8" [(ngModel)]="CHA"></ion-input>
+                <ion-input formControlName="cha" type="number" placeholder="8" [value]="CHA" [(ngModel)]="CHA"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
               <ion-item>
                 <ion-label stacked>Modifier</ion-label>
-                <ion-input formControlName="chamod" type="string" placeholder="-1" [(ngModel)]="CHAMod"></ion-input>
+                <ion-input formControlName="chamod" type="string" placeholder="-1" [value]="CHAMod" [(ngModel)]="CHAMod"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -245,13 +245,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Athletics</ion-label>
-              <ion-input formControlName="athletics" type="number" placeholder="9" [(ngModel)]="athletics"></ion-input>
+              <ion-input formControlName="athletics" type="number" placeholder="9" [value]="athletics" [(ngModel)]="athletics"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Acrobatics</ion-label>
-              <ion-input formControlName="acrobatics" type="number" placeholder="5" [(ngModel)]="acrobatics"></ion-input>
+              <ion-input formControlName="acrobatics" type="number" placeholder="5" [value]="acrobatics" [(ngModel)]="acrobatics"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -259,13 +259,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Sleight of Hand</ion-label>
-              <ion-input formControlName="sleightofhand" type="number" placeholder="4" [(ngModel)]="sleightOfHand"></ion-input>
+              <ion-input formControlName="sleightofhand" type="number" placeholder="4" [value]="sleightOfHand" [(ngModel)]="sleightOfHand"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Stealth</ion-label>
-              <ion-input formControlName="stealth" type="number" placeholder="7" [(ngModel)]="stealth"></ion-input>
+              <ion-input formControlName="stealth" type="number" placeholder="7" [value]="stealth" [(ngModel)]="stealth"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -273,13 +273,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Arcana</ion-label>
-              <ion-input formControlName="arcana" type="number" placeholder="1" [(ngModel)]="arcana"></ion-input>
+              <ion-input formControlName="arcana" type="number" placeholder="1" [value]="arcana" [(ngModel)]="arcana"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>History</ion-label>
-              <ion-input formControlName="history" type="number" placeholder="2" [(ngModel)]="history"></ion-input>
+              <ion-input formControlName="history" type="number" placeholder="2" [value]="history" [(ngModel)]="history"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -287,13 +287,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Investigation</ion-label>
-              <ion-input formControlName="investigation" type="number" placeholder="8" [(ngModel)]="investigation"></ion-input>
+              <ion-input formControlName="investigation" type="number" placeholder="8" [value]="investigation" [(ngModel)]="investigation"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Nature</ion-label>
-              <ion-input formControlName="nature" type="number" placeholder="4" [(ngModel)]="nature"></ion-input>
+              <ion-input formControlName="nature" type="number" placeholder="4" [value]="nature" [(ngModel)]="nature"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -301,13 +301,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Religion</ion-label>
-              <ion-input formControlName="religion" type="number" placeholder="2" [(ngModel)]="religion"></ion-input>
+              <ion-input formControlName="religion" type="number" placeholder="2" [value]="religion" [(ngModel)]="religion"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Animal Handling</ion-label>
-              <ion-input formControlName="animalhandling" type="number" placeholder="6" [(ngModel)]="animalHandling"></ion-input>
+              <ion-input formControlName="animalhandling" type="number" placeholder="6" [value]="animalHandling" [(ngModel)]="animalHandling"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -315,13 +315,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Insight</ion-label>
-              <ion-input formControlName="insight" type="number" placeholder="1" [(ngModel)]="insight"></ion-input>
+              <ion-input formControlName="insight" type="number" placeholder="1" [value]="insight" [(ngModel)]="insight"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Medicine</ion-label>
-              <ion-input formControlName="medicine" type="number" placeholder="3" [(ngModel)]="medicine"></ion-input>
+              <ion-input formControlName="medicine" type="number" placeholder="3" [value]="medicine" [(ngModel)]="medicine"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -329,13 +329,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Perception</ion-label>
-              <ion-input formControlName="perception" type="number" placeholder="4" [(ngModel)]="perception"></ion-input>
+              <ion-input formControlName="perception" type="number" placeholder="4" [value]="perception" [(ngModel)]="perception"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Survival</ion-label>
-              <ion-input formControlName="survival" type="number" placeholder="9" [(ngModel)]="survival"></ion-input>
+              <ion-input formControlName="survival" type="number" placeholder="9" [value]="survival" [(ngModel)]="survival"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -343,13 +343,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Deception</ion-label>
-              <ion-input formControlName="deception" type="number" placeholder="7" [(ngModel)]="deception"></ion-input>
+              <ion-input formControlName="deception" type="number" placeholder="7" [value]="deception" [(ngModel)]="deception"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Intimidation</ion-label>
-              <ion-input formControlName="intimidation" type="number" placeholder="2" [(ngModel)]="intimidation"></ion-input>
+              <ion-input formControlName="intimidation" type="number" placeholder="2" [value]="intimidation" [(ngModel)]="intimidation"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -357,13 +357,13 @@
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Performance</ion-label>
-              <ion-input formControlName="performance" type="number" placeholder="5" [(ngModel)]="performance"></ion-input>
+              <ion-input formControlName="performance" type="number" placeholder="5" [value]="performance" [(ngModel)]="performance"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item>
               <ion-label stacked>Persuasion</ion-label>
-              <ion-input formControlName="persuasion" type="number" placeholder="3" [(ngModel)]="persuasion"></ion-input>
+              <ion-input formControlName="persuasion" type="number" placeholder="3" [value]="persuasion" [(ngModel)]="persuasion"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -397,7 +397,7 @@
             <ion-item>
               <ion-label stacked>Senses</ion-label>
               <ion-textarea formControlName="senses" type="string" placeholder="Dark-vision 60ft: Can see further through darkness; Deaf: Can not hear sounds through conventional means;..."
-                [(ngModel)]="senses"></ion-textarea>
+                [value]="senses" [(ngModel)]="senses"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -405,7 +405,8 @@
           <ion-col col-12>
             <ion-item>
               <ion-label stacked>Languages</ion-label>
-              <ion-textarea formControlName="languages" type="string" placeholder="Common, Elven, Orcish..." [(ngModel)]="languages"></ion-textarea>
+              <ion-textarea formControlName="languages" type="string" placeholder="Common, Elven, Orcish..."
+              [value]="languages" [(ngModel)]="languages"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -415,7 +416,7 @@
             <ion-item>
               <ion-label stacked>Passives</ion-label>
               <ion-textarea formControlName="passives" type="string" placeholder="Damned Soul: No longer receives buffs from party members due to a curse placed upon you many moons ago..."
-                [(ngModel)]="passives"></ion-textarea>
+               [value]="passives" [(ngModel)]="passives"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -450,7 +451,7 @@
             <ion-item>
               <ion-label stacked>Weapons</ion-label>
               <ion-input formControlName="weapons" type="string" placeholder="DAGGER: Melee Weapon Attack, +4 to hit, reach 5 ft, one target, (1d4 + 2) piercing damage; BOW: Ranged Weapon Attack, +4 to hit, reach 50 ft, one target, (1d4 + 1) piercing damage;"
-                [(ngModel)]="weapons"></ion-input>
+               [value]="weapons" [(ngModel)]="weapons"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -459,7 +460,8 @@
             <!-- Would like to have a full text box/area in a future update -->
             <ion-item>
               <ion-label stacked>Equipment</ion-label>
-              <ion-input formControlName="equipment" type="string" placeholder="Leather armour; Lucky Coin; Magical Lock Box;" [(ngModel)]="equipment"></ion-input>
+              <ion-input formControlName="equipment" type="string" placeholder="Leather armour; Lucky Coin; Magical Lock Box;" 
+              [value]="equipment" [(ngModel)]="equipment"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -493,7 +495,7 @@
 
             <ion-item>
               <ion-label stacked>Journal</ion-label>
-              <ion-input type="string" [(ngModel)]="journal"></ion-input>
+              <ion-input type="string" [value]="journal" [(ngModel)]="journal"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>

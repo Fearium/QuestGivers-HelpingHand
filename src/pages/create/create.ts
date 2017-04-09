@@ -4,6 +4,7 @@ import { NavController, ActionSheetController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { HomePage } from '../home/home';
 import { SelectPage } from '../select/select';
+import { ViewStatsPage } from '../viewStats/viewStats';
 
 //validator imports
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -17,6 +18,7 @@ import { skillsValidator } from '../../validators/skills';
 })
 export class CreatePage {
 
+  //Section Form Groups
   sectionOne: FormGroup;
   sectionTwo: FormGroup;
   sectionThree: FormGroup;
@@ -25,14 +27,19 @@ export class CreatePage {
   sectionSix: FormGroup;
 
   //NEEDS VALIDATION
-
+  
+  //Basic Character Info
   name: string;
-  hitPoints: number;
   race: string;
   class: string;
   alignment: string;
+  
+  //Base Stats
+  hitPoints: number;
   armourClass: number;
   speed: number;
+
+  //Ability Scores
   STR: number;
   STRMod: string;
   DEX: number;
@@ -45,6 +52,8 @@ export class CreatePage {
   WISMod: string;
   CHA: number;
   CHAMod: string;
+
+  //Skills
   athletics: string;
   acrobatics: string;
   sleightOfHand: string;
@@ -63,18 +72,25 @@ export class CreatePage {
   intimidation: string;
   performance: string
   persuasion: string;
+
+  //Basic Actions
   senses: string;
   languages: string;
+  passives: string;
+
+  //Miscillaneous
   weapons: string;
   equipment: string;
-  passives: string;
   journal: string;
+
+  //Flags
   showAbilityScoresAndModifiers: boolean;
   showBasicInformation = true;
   showSkills: boolean;
   showAbilities: boolean;
   showGear: boolean;
   showJournal: boolean;
+  selectedCharacter: any;
   
 
   characters: FirebaseListObservable<any>;
@@ -141,7 +157,13 @@ export class CreatePage {
           weapons: ['', Validators.required],
           equipment: ['', Validators.required],
         });
-
+  
+  this.selectedCharacter = navParams.get('selectedCharacter');
+  
+  if(this.selectedCharacter != null){
+    this.getCharacterInfo(this.selectedCharacter);
+  }
+  
   this.characters = af.database.list('/characters');
 }
 cancelCreation(){
@@ -190,8 +212,56 @@ previousToShowAbilitiesButton(){
   this.showAbilities = true;
 }
 addCharacter(){
-  if(this.sectionOne.valid && this.sectionTwo.valid && this.sectionThree.valid && this.sectionFour.valid && this.sectionFive.valid && this.sectionSix.valid){ 
-    this.characters.push({
+  if(this.sectionOne.valid && this.sectionTwo.valid && this.sectionThree.valid && this.sectionFour.valid && this.sectionFive.valid && this.sectionSix.valid){
+    if(this.selectedCharacter){
+      this.characters.update(this.selectedCharacter.$key, {
+        name: this.name,
+      hitPoints: this.hitPoints,
+      race: this.race,
+      class: this.class,
+      alignment: this.alignment,
+      armourClass: this.armourClass,
+      speed: this.speed,
+      STR: this.STR,
+      STRMod: this.STRMod,
+      DEX: this.DEX,
+      DEXMod: this.DEXMod,
+      CON: this.CON,
+      CONMod: this.CONMod,
+      INT: this.INT,
+      INTMod: this.INTMod,
+      WIS: this.WIS,
+      WISMod: this.WISMod,
+      CHA: this.CHA,
+      CHAMod: this.CHAMod,
+      athletics: this.athletics,
+      acrobatics: this.acrobatics,
+      sleightOfHand: this.sleightOfHand,
+      stealth: this.stealth,
+      arcana: this.arcana,
+      history: this.history,
+      investigation: this.investigation,
+      nature: this.nature,
+      religion: this.religion,
+      animalHandling: this.animalHandling,
+      insight: this.insight,
+      medicine: this.medicine,
+      survival: this.survival,
+      deception: this.deception,
+      intimidation: this.intimidation,
+      performance: this.performance,
+      persuasion: this.persuasion,
+      senses: this.senses,
+      languages: this.languages,
+      weapons: this.weapons,
+      equipment: this.equipment,
+      passives: this.passives,
+      //just saves a journal variable with the  characters name so that it can be accessed later
+      journal: this.name
+      });
+    }
+    else{
+      this.characters.push({
       name: this.name,
       hitPoints: this.hitPoints,
       race: this.race,
@@ -236,9 +306,66 @@ addCharacter(){
       //just saves a journal variable with the  characters name so that it can be accessed later
       journal: this.name
     })
+    } 
     // Will eventually navigate to Stat Block view instead
-    this.navCtrl.push(SelectPage/*, {database: this.characters}*/);
+    this.navCtrl.push(ViewStatsPage, {selectedCharacter: this.selectedCharacter});
   }
+}
+
+/**
+ * @desc Fill Local Variables with Character Data
+ * @param character 
+ */
+public getCharacterInfo(character){
+   this.name = character.name;
+   this.race = character.race;
+   this.class = character.class;
+   this.alignment = character.alignment;
+   
+   this.hitPoints = character.hitPoints;
+   this.armourClass = character.armourClass;
+   this.speed = character.speed;
+
+   this.STR = character.STR;
+   this.STRMod = character.STRMod;
+   this.DEX = character.DEX;
+   this.DEXMod = character.DEXMod;
+   this.CON = character.CON;
+   this.CONMod = character.CONMod;
+   this.INT = character.INT;
+   this.INTMod = character.INTMod;
+   this.WIS = character.WIS;
+   this.WISMod = character.WISMod;
+   this.CHA = character.CHA;
+   this.CHAMod = character.CHAMod;
+
+   this.athletics = character.athletics;
+   this.acrobatics = character.acrobatics;
+   this.sleightOfHand = character.sleightOfHand;
+   this.stealth = character.stealth;
+   this.arcana = character.arcana;
+   this.history = character.history;
+   this.investigation = character.investigation;
+   this.nature = character.nature;
+   this.religion = character.religion;
+   this.animalHandling = character.animalHandling;
+   this.insight = character.insight;
+   this.medicine = character.medicine;
+   this.perception = character.perception;
+   this.survival = character.survival;
+   this.deception = character.deception;
+   this.intimidation = character.intimidation;
+   this.performance = character.performance;
+   this.persuasion = character.persuasion;
+
+   this.senses = character.senses;
+   this.languages = character.languages;
+   this.passives = character.passives;
+
+   this.weapons = character.weapons;
+   this.equipment = character.equipment;
+   this.journal = character.journal;
+
 }
 
 }
