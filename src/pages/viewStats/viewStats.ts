@@ -21,17 +21,16 @@ export class ViewStatsPage {
   }
 
   public plural(){
-    var name = this.selectedCharacter.name;
-    var last = (name[name.length -1]);
+    var full = this.selectedCharacter.name;
+    var last = (full[full.length -1]);
 
     if(last.toLowerCase() == "s"){
-      name = name + "'"
+      full = full + "'"
     }
     else{
-      name = name + "'s"
+      full = full + "'s"
     }
-
-    return name;
+    return full;
   }
 
 }

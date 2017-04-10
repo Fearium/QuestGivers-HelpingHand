@@ -215,7 +215,7 @@ addCharacter(){
   if(this.sectionOne.valid && this.sectionTwo.valid && this.sectionThree.valid && this.sectionFour.valid && this.sectionFive.valid && this.sectionSix.valid){
     if(this.selectedCharacter){
       this.characters.update(this.selectedCharacter.$key, {
-        name: this.name,
+      name: this.name,
       hitPoints: this.hitPoints,
       race: this.race,
       class: this.class,
@@ -306,9 +306,10 @@ addCharacter(){
       //just saves a journal variable with the  characters name so that it can be accessed later
       journal: this.name
     })
+
     } 
     // Will eventually navigate to Stat Block view instead
-    this.navCtrl.push(ViewStatsPage, {selectedCharacter: this.selectedCharacter});
+    this.navCtrl.push(SelectPage);
   }
 }
 
