@@ -27,7 +27,7 @@ this.navCtrl.push(CreatePage/*, {database: this.characters}*/);
 //of the selected character.
 navToJournalSelect(){
   this.flag = true;
-  this.navCtrl.push(SelectPage,{
+  this.navCtrl.setRoot(SelectPage,{
     journalSelect: this.flag
   });
 }
