@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { ViewStatsPage } from '../viewStats/viewStats';
 import { CreatePage } from '../create/create';
@@ -12,11 +12,27 @@ export class SelectPage {
 
   storedCharacterId : string;
   characters: FirebaseListObservable<any>;
+  flag: boolean;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, 
   af: AngularFire, public actionSheetCtrl: ActionSheetController) {
   this.characters = af.database.list('/characters');
+  this.flag = navParams.get('journalSelect');
 }
+
+  showMenu(character){
+    if(this.flag){
+      this.flag = false;
+      
+      this.navCtrl.push(CreatePage,{
+        selectedCharacter: character,
+        flag: this.flag
+      });
+    }
+    else{
+      this.showOptions(character);
+    }
+  }
 
   showOptions(character) {
   let actionSheet = this.actionSheetCtrl.create({
@@ -61,36 +77,4 @@ viewCharacter(selectedCharacter){
             selectedCharacter: selectedCharacter
           });
 }
-
-updateCharacter(characterId, characterName){
-  let prompt = this.alertCtrl.create({
-    title: 'Character Name',
-    message: "Update the name for this Character",
-    inputs: [
-      {
-        name: 'name',
-        placeholder: 'Name',
-        value: characterName
-      },
-    ],
-    buttons: [
-      {
-        text: 'Cancel',
-        handler: data => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Save',
-        handler: data => {
-          this.characters.update(characterId, {
-            name: data.name
-          });
-        }
-      }
-    ]
-  });
-  prompt.present();
-}
-
 }

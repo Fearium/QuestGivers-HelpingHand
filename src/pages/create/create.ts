@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController, NavParams } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { HomePage } from '../home/home';
@@ -91,12 +91,13 @@ export class CreatePage {
   showGear: boolean;
   showJournal: boolean;
   selectedCharacter: any;
+  flag: boolean = true;
   
 
   characters: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  af: AngularFire, public actionSheetCtrl: ActionSheetController, public formBuilder: FormBuilder) {
+  af: AngularFire, public alertCntl: AlertController, public formBuilder: FormBuilder) {
 
     this.sectionOne = formBuilder.group({
             name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -159,16 +160,65 @@ export class CreatePage {
         });
   
   this.selectedCharacter = navParams.get('selectedCharacter');
+  this.flag = navParams.get('flag');
   
   if(this.selectedCharacter != null){
     this.getCharacterInfo(this.selectedCharacter);
+
+    if(!this.flag){
+      this.showBasicInformation = false;
+      this.showAbilityScoresAndModifiers = false;
+      this.showSkills = false;
+      this.showAbilities = false;
+      this.showGear = false;
+      this.showJournal = true;
+      this.flag = true;
+    }
   }
   
   this.characters = af.database.list('/characters');
 }
 cancelCreation(){
-  this.navCtrl.push(HomePage);
+  let alert = this.alertCntl.create({
+    title:'Cancel',
+    subTitle: 'Are you sure you want to cancel?',
+    buttons:[{
+      text: 'Yes',
+      handler: () => {
+        this.navCtrl.setRoot(HomePage);
+      }
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel'
+    }]
+  });
+
+  alert.present();
+
 }
+
+cancelJournal(){
+  let alert = this.alertCntl.create({
+    title:'Cancel',
+    subTitle: 'Are you sure you want to cancel?',
+    buttons:[{
+      text: 'Yes',
+      handler: () => {
+        this.flag = true;
+        this.navCtrl.setRoot(SelectPage, { journalSelect: this.flag });
+      }
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel'
+    }]
+  });
+
+  alert.present();
+
+}
+
 nextToAbilityScoresAndModifiersButton(){
   if(this.sectionOne.valid && this.sectionTwo.valid){ 
       this.showAbilityScoresAndModifiers = true;
@@ -211,6 +261,18 @@ previousToShowAbilitiesButton(){
   this.showGear = false;
   this.showAbilities = true;
 }
+
+saveJournal(){
+  if(this.selectedCharacter){
+    this.characters.update(this.selectedCharacter.$key,{
+      journal: this.journal
+    });
+
+    this.flag = true;
+    this.navCtrl.setRoot(HomePage);
+  }
+}
+
 addCharacter(){
   if(this.sectionOne.valid && this.sectionTwo.valid && this.sectionThree.valid && this.sectionFour.valid && this.sectionFive.valid && this.sectionSix.valid){
     if(this.selectedCharacter){

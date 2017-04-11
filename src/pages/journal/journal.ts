@@ -18,7 +18,8 @@ export class JournalPage {
 }
 writeJournal(){
   this.characters.push({
-  })
+    journal: this.journalText
+  });
 }
 
 }

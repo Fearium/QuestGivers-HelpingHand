@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -501,6 +501,21 @@
         </ion-row>
 
       </ion-list>
+
+      <ion-row>
+        <ion-col col-4>
+          <!-- Needs to trigger a popup to confirm cancelation-->
+          <ion-buttons start>
+            <button ion-button end color="danger" (click)="cancelJournal()">Cancel</button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-8>
+          <ion-buttons end>
+            <button ion-button end color="secondary" (click)="saveJournal()">Save!</button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
     </div>
 
   </ion-grid>

@@ -21,12 +21,14 @@ export interface PageInterface {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  flag: boolean = false;
+
   // set our app's pages
   appPages: PageInterface[] = [
     { title: 'Home', component: HomePage, icon: 'home' },
     { title: 'Create Character', component: CreatePage, index: 2, icon: 'create' },
     { title: 'View/Edit Character', component: SelectPage, index: 3, icon: 'list-box' },
-    { title: 'Journal', component: JournalPage, index: 4, icon: 'book' },
+    { title: 'Journal', component: SelectPage, index: 4, icon: 'book' },
     { title: 'Roll Dice', component: RollPage, index: 5, icon: 'cube' }
   ];
 
@@ -54,7 +56,15 @@ export class MyApp {
     this.menu.close();
 
     if (page.index) {
-      this.nav.setRoot(page.component, { tabIndex: page.index });
+      if(page.title == 'Journal'){
+        this.flag = true;
+        this.nav.setRoot(page.component, { tabIndex: page.index, journalSelect: this.flag })
+      }
+      else{
+        this.nav.setRoot(page.component, { tabIndex: page.index });
+      }
+
+        this.menu.close();      
 
     } else {
       this.nav.setRoot(page.component).catch(() => {

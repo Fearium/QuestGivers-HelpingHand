@@ -9,7 +9,10 @@ import { JournalPage } from '../journal/journal';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
+
+  flag: boolean = false;
 
   constructor(public navCtrl: NavController) {
 }
@@ -23,7 +26,10 @@ this.navCtrl.push(CreatePage/*, {database: this.characters}*/);
 //through and then passing variables through again to edit the journal
 //of the selected character.
 navToJournalSelect(){
-this.navCtrl.push(JournalPage);
+  this.flag = true;
+  this.navCtrl.push(SelectPage,{
+    journalSelect: this.flag
+  });
 }
 navToRoll(){
 this.navCtrl.push(RollPage);
