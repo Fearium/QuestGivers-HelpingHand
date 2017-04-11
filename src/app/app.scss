@@ -6,6 +6,7 @@ ion-content {
       -o-background-size: cover;
       background-size: cover;
 }
+
 .toolbar-title.toolbar-title-md{
     padding-left: 0px;
     margin-left: -20px;
@@ -17,6 +18,9 @@ ion-content.sideNavMenu {
 }
 button.sideNavButton.item.item-block.item-md{
     background-color: #B87333;
+}
+button.sideNavButton.item.item-block.item-md:active{
+    background-color: #F2E6DD;
 }
 // App Global Sass
 // --------------------------------------------------
