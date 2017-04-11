@@ -30,6 +30,7 @@ export class CreatePage {
   
   //Basic Character Info
   name: string;
+  namePlural: string;
   race: string;
   class: string;
   alignment: string;
@@ -161,6 +162,7 @@ export class CreatePage {
   
   this.selectedCharacter = navParams.get('selectedCharacter');
   this.flag = navParams.get('flag');
+  this.namePlural = this.plural();
   
   if(this.selectedCharacter != null){
     this.getCharacterInfo(this.selectedCharacter);
@@ -272,6 +274,19 @@ saveJournal(){
     this.navCtrl.setRoot(HomePage);
   }
 }
+
+ plural(){
+    var full = this.selectedCharacter.name;
+    var last = (full[full.length -1]);
+
+    if(last.toLowerCase() == "s"){
+      full = full + "'"
+    }
+    else{
+      full = full + "'s"
+    }
+    return full;
+  }
 
 addCharacter(){
   if(this.sectionOne.valid && this.sectionTwo.valid && this.sectionThree.valid && this.sectionFour.valid && this.sectionFive.valid && this.sectionSix.valid){

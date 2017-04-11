@@ -53,8 +53,11 @@ export class SelectPage {
       {
         text: 'Edit Character',
         handler: () => {
+          this.flag = true;
+
           this.navCtrl.push(CreatePage,{
-            selectedCharacter: character
+            selectedCharacter: character,
+            flag: this.flag
           });
         }
       },{
