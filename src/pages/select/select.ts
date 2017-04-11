@@ -5,7 +5,7 @@ import { ViewStatsPage } from '../viewStats/viewStats';
 import { CreatePage } from '../create/create';
 
 @Component({
-  selector: 'page-about',
+  selector: 'page-select',
   templateUrl: 'select.html'
 })
 export class SelectPage {

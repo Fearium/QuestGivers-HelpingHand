@@ -3,7 +3,7 @@ import { NavController, AlertController, ActionSheetController, NavParams } from
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-journal',
   templateUrl: 'journal.html'
 })
 export class JournalPage {

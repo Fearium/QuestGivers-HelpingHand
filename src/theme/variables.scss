@@ -12,9 +12,43 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
+$background-color: (
+  #F2E6DD
+);
 
+$toolbar-md-background:(
+  #222
+);
 
+$toolbar-md-button-color:(
+  #B87333
+);
 
+$toolbar-md-height:(
+  50px
+);
+
+$toolbar-md-title-font-size:(
+2.5rem
+);
+
+/*
+$list-md-activated-background-color:	(red	);
+//$list-md-background-color:	(red);
+$list-md-border-color:	(#dedede	);
+//$list-md-header-border-top:	(1px solid red	);
+$list-md-header-color:	(#757575	);
+$list-md-header-font-size:	(1.4rem);	
+$list-md-header-margin-bottom:	(13px);	
+$list-md-header-min-height:	(4.5rem	);
+//$list-md-header-padding-left:	($item-md-padding-left	);
+$list-md-margin-bottom:	(16px);	
+$list-md-margin-left:	(0	);
+$list-md-margin-right:	(0	);
+$list-md-margin-top:	(16px);
+//$list-md-text-color:	($list-text-color);
+//$list-md-text-color:	($list-text-color);
+*/
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -28,7 +62,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  map:        #F2E6DD
 );
 
 

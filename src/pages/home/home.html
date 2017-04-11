@@ -10,23 +10,65 @@
 </ion-header>
 
 <ion-content padding-top>
-  <ion-buttons>
-  <button ion-button icon-right full (click)="navToCreate()">
-    Create Character
-    <ion-icon name="add"></ion-icon>
-  </button>
-  <button ion-button icon-right full (click)="navToSelect()">
-    View/Edit Character
-    <ion-icon name="list-box"></ion-icon>
-  </button>
-  <button ion-button icon-right full (click)="navToJournalSelect()">
-    Journal
+
+  <ion-grid>
+  
+    <ion-row>
+      <ion-col col-1>
+      </ion-col>
+    <ion-col col-10>
+      <ion-buttons>
+      <button class="homeButton" ion-button icon-right large block (click)="navToCreate()">
+        Create Character
+        <ion-icon name="add"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col col-1>
+      </ion-col>
+  </ion-row>
+      <ion-row>
+      <ion-col col-1>
+      </ion-col>
+    <ion-col col-10>
+      <ion-buttons>
+      <button class="homeButton" ion-button icon-right large block (click)="navToSelect()">
+        View/Edit Character
+        <ion-icon name="list-box"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col col-1>
+      </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col col-1>
+      </ion-col>
+    <ion-col col-10>
+      <ion-buttons>
+      <button class="homeButton" ion-button icon-right large block (click)="navToJournalSelect()">
+        Journal
     <ion-icon name="book"></ion-icon>
-  </button>
-  <button ion-button icon-right full (click)="navToRoll()">
-    Roll Dice
+      </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col col-1>
+      </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col col-1>
+      </ion-col>
+    <ion-col col-10>
+      <ion-buttons>
+      <button class="homeButton" ion-button icon-right large block (click)="navToRoll()">
+        Roll Dice
     <ion-icon name="cube"></ion-icon>
-  </button>
-</ion-buttons>
+      </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col col-1>
+      </ion-col>
+  </ion-row>
+</ion-grid>
 
 </ion-content>

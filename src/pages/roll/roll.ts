@@ -4,7 +4,7 @@ import { AngularFire, FirebaseListObservable} from 'angularfire2';
 import { Die } from './die';
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-roll',
   templateUrl: 'roll.html'
 })
 

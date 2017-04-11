@@ -3,7 +3,7 @@ import { NavController, AlertController, ActionSheetController, NavParams } from
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
-  selector: 'page-about',
+  selector: 'page-viewStats',
   templateUrl: 'viewStats.html'
 })
 export class ViewStatsPage {

@@ -13,7 +13,7 @@ import { abilityScoreValidator } from '../../validators/abilityScore';
 import { skillsValidator } from '../../validators/skills';
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-create',
   templateUrl: 'create.html'
 })
 export class CreatePage {
