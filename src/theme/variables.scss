@@ -32,17 +32,22 @@ $toolbar-md-title-font-size:(
 2.5rem
 );
 
-ion-content {
-  background: url("../../assets/images/mapBackground2.jpg") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-}
-    .toolbar-title.toolbar-title-md{
-        padding-left: 0px;
-        margin-left: -20px;
-    }
+
+$list-md-activated-background-color:	(red	);
+//$list-md-background-color:	(red);
+$list-md-border-color:	(#dedede	);
+//$list-md-header-border-top:	(1px solid red	);
+$list-md-header-color:	(#757575	);
+$list-md-header-font-size:	(1.4rem);	
+$list-md-header-margin-bottom:	(13px);	
+$list-md-header-min-height:	(4.5rem	);
+//$list-md-header-padding-left:	($item-md-padding-left	);
+$list-md-margin-bottom:	(16px);	
+$list-md-margin-left:	(0	);
+$list-md-margin-right:	(0	);
+$list-md-margin-top:	(16px);
+//$list-md-text-color:	($list-text-color);
+//$list-md-text-color:	($list-text-color);
 
 // Named Color Variables
 // --------------------------------------------------
