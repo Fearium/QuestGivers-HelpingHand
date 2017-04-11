@@ -16,6 +16,33 @@ $background-color: (
   #F2E6DD
 );
 
+$toolbar-md-background:(
+  #222
+);
+
+$toolbar-md-button-color:(
+  #B87333
+);
+
+$toolbar-md-height:(
+  50px
+);
+
+$toolbar-md-title-font-size:(
+2.5rem
+);
+
+ion-content {
+  background: url("../../assets/images/mapBackground2.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+    .toolbar-title.toolbar-title-md{
+        padding-left: 0px;
+        margin-left: -20px;
+    }
 
 // Named Color Variables
 // --------------------------------------------------
