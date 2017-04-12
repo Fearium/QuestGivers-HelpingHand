@@ -105,7 +105,21 @@
           </ion-col>
         </ion-row>
     </div>
-    <div class="skillsBlock">
+    <div [hidden]="!showSkillsToggle">
+          <ion-row>
+          <ion-col col-12>
+           <h5 (click)="showSkillsBlock()">Click to show Skills <ion-icon name="arrow-dropdown"></ion-icon></h5>
+        </ion-col>
+        </ion-row>
+    </div>
+    <div [hidden]="!hideSkillsToggle">
+      <ion-row>
+        <ion-col col-12>
+           <h5 (click)="hideSkillsBlock()">Click to hide Skills <ion-icon name="arrow-dropup"></ion-icon></h5>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div [hidden]="!skillsBlock" class="skillsBlock">
         <ion-row>
           <ion-col col-6>
               <h5 text-center>Athletics</h5>
@@ -251,7 +265,22 @@
           </ion-col>
         </ion-row>
     </div>
-    <div class="abilitiesBlock">
+
+      <div [hidden]="!showAbilitiesToggle">
+          <ion-row>
+          <ion-col col-12>
+           <h5 (click)="showAbilitiesBlock()">Click to show Abilities <ion-icon name="arrow-dropdown"></ion-icon></h5>
+        </ion-col>
+        </ion-row>
+    </div>
+    <div [hidden]="!hideAbilitiesToggle">
+      <ion-row>
+        <ion-col col-12>
+           <h5 (click)="hideAbilitiesBlock()">Click to hide Abilities <ion-icon name="arrow-dropup"></ion-icon></h5>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div [hidden]="!abilitiesBlock" class="abilitiesBlock">
         <ion-row>
           <ion-col col-12>
               <ion-label stacked><h5>Senses</h5></ion-label>
@@ -271,7 +300,22 @@
           </ion-col>
         </ion-row>
     </div>
-    <div class="gearBlock">
+
+      <div [hidden]="!showGearToggle">
+          <ion-row>
+          <ion-col col-12>
+           <h5 (click)="showGearBlock()">Click to show Gear <ion-icon name="arrow-dropdown"></ion-icon></h5>
+        </ion-col>
+        </ion-row>
+    </div>
+    <div [hidden]="!hideGearToggle">
+      <ion-row>
+        <ion-col col-12>
+           <h5 (click)="hideGearBlock()">Click to hide Gear <ion-icon name="arrow-dropup"></ion-icon></h5>
+        </ion-col>
+      </ion-row>
+    </div>    
+    <div [hidden]="!gearBlock" class="gearBlock">
         <ion-row>
           <ion-col col-23>
               <ion-label stacked><h5>Weapons</h5></ion-label>
