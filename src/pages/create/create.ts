@@ -162,10 +162,10 @@ export class CreatePage {
   
   this.selectedCharacter = navParams.get('selectedCharacter');
   this.flag = navParams.get('flag');
-  this.namePlural = this.plural();
   
   if(this.selectedCharacter != null){
     this.getCharacterInfo(this.selectedCharacter);
+    this.namePlural = this.plural();
 
     if(!this.flag){
       this.showBasicInformation = false;
