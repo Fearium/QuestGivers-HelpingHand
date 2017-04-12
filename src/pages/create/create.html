@@ -450,8 +450,8 @@
             <!-- Would like to have a full text box/area in a future update -->
             <ion-item>
               <ion-label stacked>Weapons</ion-label>
-              <ion-input formControlName="weapons" type="string" placeholder="DAGGER: Melee Weapon Attack, +4 to hit, reach 5 ft, one target, (1d4 + 2) piercing damage; BOW: Ranged Weapon Attack, +4 to hit, reach 50 ft, one target, (1d4 + 1) piercing damage;"
-               [value]="weapons" [(ngModel)]="weapons"></ion-input>
+              <ion-textarea formControlName="weapons" type="string" placeholder="DAGGER: Melee Weapon Attack, +4 to hit, reach 5 ft, one target, (1d4 + 2) piercing damage; BOW: Ranged Weapon Attack, +4 to hit, reach 50 ft, one target, (1d4 + 1) piercing damage;"
+               [value]="weapons" [(ngModel)]="weapons"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -460,8 +460,8 @@
             <!-- Would like to have a full text box/area in a future update -->
             <ion-item>
               <ion-label stacked>Equipment</ion-label>
-              <ion-input formControlName="equipment" type="string" placeholder="Leather armour; Lucky Coin; Magical Lock Box;" 
-              [value]="equipment" [(ngModel)]="equipment"></ion-input>
+              <ion-textarea formControlName="equipment" type="string" placeholder="Leather armour; Lucky Coin; Magical Lock Box;" 
+              [value]="equipment" [(ngModel)]="equipment"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -495,7 +495,7 @@
 
             <ion-item>
               <ion-label stacked>Journal</ion-label>
-              <ion-input type="string" [value]="journal" [(ngModel)]="journal"></ion-input>
+              <ion-textarea type="string" [value]="journal" [(ngModel)]="journal"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
