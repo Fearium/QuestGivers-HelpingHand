@@ -76,7 +76,7 @@ removeCharacter(characterId: string){
 }
 viewCharacter(selectedCharacter){
 
-  this.navCtrl.push(ViewStatsPage,{
+  this.navCtrl.setRoot(ViewStatsPage,{
             selectedCharacter: selectedCharacter
           });
 }
