@@ -93,6 +93,7 @@ export class CreatePage {
   showJournal: boolean;
   selectedCharacter: any;
   flag: boolean = true;
+  title: string;
   
 
   characters: FirebaseListObservable<any>;
@@ -162,12 +163,14 @@ export class CreatePage {
   
   this.selectedCharacter = navParams.get('selectedCharacter');
   this.flag = navParams.get('flag');
+  this.title = "Character Creation";
   
   if(this.selectedCharacter != null){
     this.getCharacterInfo(this.selectedCharacter);
     this.namePlural = this.plural();
 
     if(!this.flag){
+      this.title = "Journal"
       this.showBasicInformation = false;
       this.showAbilityScoresAndModifiers = false;
       this.showSkills = false;
