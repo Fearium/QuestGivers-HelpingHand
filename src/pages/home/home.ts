@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 }
 navToSelect(){
-this.navCtrl.push(SelectPage);
+this.navCtrl.setRoot(SelectPage);
 }
 navToCreate(){
 this.navCtrl.push(CreatePage/*, {database: this.characters}*/);
@@ -32,7 +32,7 @@ navToJournalSelect(){
   });
 }
 navToRoll(){
-this.navCtrl.push(RollPage);
+this.navCtrl.setRoot(RollPage);
 }
 
 }
