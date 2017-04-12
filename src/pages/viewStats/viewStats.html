@@ -10,131 +10,280 @@
 </ion-header>
 
 <ion-content>
-      <h3 text-center>Basic Information</h3>
-              <ion-label stacked color="danger">Character Name</ion-label>
-              <ion-label stacked>{{selectedCharacter.name}}</ion-label>
+  <ion-grid>
+        <ion-row>
+          <ion-col col-5>
+              <h2>{{selectedCharacter.name}}</h2>
+          </ion-col>
+          <ion-col col-2>
+              <h4>The</h4>
+          </ion-col>
+          <ion-col col-5>
+              <h2>{{selectedCharacter.class}}</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5>
+              <h2>{{selectedCharacter.race}}</h2>
+          </ion-col>
+          <ion-col col-1>
+              <h4>,</h4>
+          </ion-col>
+          <ion-col col-5>
+              <h2>{{selectedCharacter.alignment}}</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+              <ion-label stacked><h4>Hit Points</h4></ion-label>
+              <h4>{{selectedCharacter.hitPoints}}</h4>
+          </ion-col>
+          <ion-col col-4>
+              <ion-label stacked><h4>Armour Class</h4></ion-label>
+              <h4>{{selectedCharacter.armourClass}}</h4>
+          </ion-col>
+          <ion-col col-4>
+              <ion-label stacked><h4>Speed</h4></ion-label>
+              <h4>{{selectedCharacter.speed}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+              <h4>STR</h4>
+          </ion-col>
+          <ion-col col-4>
+              <h4>DEX</h4>
+          </ion-col>
+          <ion-col col-4>
+              <h4>CON</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.STR}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.STRMod}}</h4>
+          </ion-col>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.DEX}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.DEXMod}}</h4>
+          </ion-col>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.CON}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.CONMod}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+              <h4>INT</h4>
+          </ion-col>
+          <ion-col col-4>
+              <h4>WIS</h4>
+          </ion-col>
+          <ion-col col-4>
+              <h4>CHA</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.INT}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.INTMod}}</h4>
+          </ion-col>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.WIS}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.WISMod}}</h4>
+          </ion-col>
+          <ion-col col-3>
+              <h4>{{selectedCharacter.CHA}}</h4>
+          </ion-col>
+          <ion-col col-1>
+              <h4>{{selectedCharacter.CHAMod}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Athletics</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Acrobatics</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.athletics}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.acrobatics}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Sleight of Hand</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Stealth</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.sleightOfHand}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.stealth}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Arcana</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>History</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.arcana}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.history}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Investigation</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Nature</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.investigation}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.nature}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Religion</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Animal Handling</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.religion}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.animalHandling}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Insight</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Medicine</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.insight}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.medicine}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Perception</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Survival</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.perception}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.survival}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Deception</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Intimidation</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.deception}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.intimidation}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>Performance</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>Persuasion</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.performance}}</h4>
+          </ion-col>
+          <ion-col col-6>
+              <h4>{{selectedCharacter.persuasion}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+              <ion-label stacked><h4>Senses</h4></ion-label>
+              <p>{{selectedCharacter.senses}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+              <ion-label stacked><h4>Languages</h4></ion-label>
+              <p>{{selectedCharacter.languages}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-23>
+              <ion-label stacked><h4>Passives</h4></ion-label>
+              <p>{{selectedCharacter.passives}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-23>
+              <ion-label stacked><h4>Weapons</h4></ion-label>
+              <p>{{selectedCharacter.weapons}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-23>
+              <ion-label stacked><h4>Equipment</h4></ion-label>
+              <p>{{selectedCharacter.equipment}}</p>
+          </ion-col>
+        </ion-row>
 
-              <ion-label stacked>Class</ion-label>
-              <ion-label stacked>{{selectedCharacter.class}}</ion-label>
-
-              <ion-label stacked>Race</ion-label>
-              <ion-label stacked>{{selectedCharacter.race}}</ion-label>
-
-              <ion-label stacked>Alignment</ion-label>
-              <ion-label stacked>{{selectedCharacter.alignment}}</ion-label>
-
-              <ion-label stacked>Hit Points</ion-label>
-              <ion-label stacked>{{selectedCharacter.hitPoints}}</ion-label>
-
-              <ion-label stacked>Armour Class</ion-label>
-              <ion-label stacked>{{selectedCharacter.armourClass}}</ion-label>
-
-              <ion-label stacked>Speed</ion-label>
-              <ion-label stacked>{{selectedCharacter.speed}}</ion-label>
-
-              <ion-label stacked>STR</ion-label>
-              <ion-label stacked>{{selectedCharacter.STR}}</ion-label>
-
-              <ion-label stacked>STRMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.STRMod}}</ion-label>
-
-              <ion-label stacked>DEX</ion-label>
-              <ion-label stacked>{{selectedCharacter.DEX}}</ion-label>
-
-              <ion-label stacked>DEXMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.DEXMod}}</ion-label>
-
-              <ion-label stacked>CON</ion-label>
-              <ion-label stacked>{{selectedCharacter.CON}}</ion-label>
-
-              <ion-label stacked>CONMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.CONMod}}</ion-label>
-
-              <ion-label stacked>INT</ion-label>
-              <ion-label stacked>{{selectedCharacter.INT}}</ion-label>
-
-              <ion-label stacked>INTMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.INTMod}}</ion-label>
-
-              <ion-label stacked>WIS</ion-label>
-              <ion-label stacked>{{selectedCharacter.WIS}}</ion-label>
-
-              <ion-label stacked>WISMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.WISMod}}</ion-label>
-
-              <ion-label stacked>CHA</ion-label>
-              <ion-label stacked>{{selectedCharacter.CHA}}</ion-label>
-
-              <ion-label stacked>CHAMod</ion-label>
-              <ion-label stacked>{{selectedCharacter.CHAMod}}</ion-label>
-
-              <ion-label stacked>athletics</ion-label>
-              <ion-label stacked>{{selectedCharacter.athletics}}</ion-label>
-
-              <ion-label stacked>acrobatics</ion-label>
-              <ion-label stacked>{{selectedCharacter.acrobatics}}</ion-label>
-
-              <ion-label stacked>sleightOfHand</ion-label>
-              <ion-label stacked>{{selectedCharacter.sleightOfHand}}</ion-label>
-
-              <ion-label stacked>stealth</ion-label>
-              <ion-label stacked>{{selectedCharacter.stealth}}</ion-label>
-
-              <ion-label stacked>arcana</ion-label>
-              <ion-label stacked>{{selectedCharacter.arcana}}</ion-label>
-
-              <ion-label stacked>history</ion-label>
-              <ion-label stacked>{{selectedCharacter.history}}</ion-label>
-
-              <ion-label stacked>investigation</ion-label>
-              <ion-label stacked>{{selectedCharacter.investigation}}</ion-label>
-
-              <ion-label stacked>nature</ion-label>
-              <ion-label stacked>{{selectedCharacter.nature}}</ion-label>
-
-              <ion-label stacked>religion</ion-label>
-              <ion-label stacked>{{selectedCharacter.religion}}</ion-label>
-
-              <ion-label stacked>animalHandling</ion-label>
-              <ion-label stacked>{{selectedCharacter.animalHandling}}</ion-label>
-
-              <ion-label stacked>insight</ion-label>
-              <ion-label stacked>{{selectedCharacter.insight}}</ion-label>
-
-              <ion-label stacked>medicine</ion-label>
-              <ion-label stacked>{{selectedCharacter.medicine}}</ion-label>
-
-              <ion-label stacked>perception</ion-label>
-              <ion-label stacked>{{selectedCharacter.perception}}</ion-label>
-
-              <ion-label stacked>survival</ion-label>
-              <ion-label stacked>{{selectedCharacter.survival}}</ion-label>
-
-               <ion-label stacked>deception</ion-label>
-              <ion-label stacked>{{selectedCharacter.deception}}</ion-label>
-
-               <ion-label stacked>intimidation</ion-label>
-              <ion-label stacked>{{selectedCharacter.intimidation}}</ion-label>
-
-               <ion-label stacked>performance</ion-label>
-              <ion-label stacked>{{selectedCharacter.performance}}</ion-label>
-
-               <ion-label stacked>persuasion</ion-label>
-              <ion-label stacked>{{selectedCharacter.persuasion}}</ion-label>
-
-               <ion-label stacked>senses</ion-label>
-              <ion-label stacked>{{selectedCharacter.senses}}</ion-label>
-
-               <ion-label stacked>languages</ion-label>
-              <ion-label stacked>{{selectedCharacter.languages}}</ion-label>
-
-               <ion-label stacked>passives</ion-label>
-              <ion-label stacked>{{selectedCharacter.passives}}</ion-label>
-
-               <ion-label stacked>weapons</ion-label>
-              <ion-label stacked>{{selectedCharacter.weapons}}</ion-label>
-
-               <ion-label stacked>equipment</ion-label>
-              <ion-label stacked>{{selectedCharacter.equipment}}</ion-label>
+  </ion-grid>
 </ion-content>
               
